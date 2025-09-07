@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FeaturesGrid from "./features-grid";
+import CTA from "./cta";
 
 export default function LandingPage() {
   return (
@@ -29,30 +30,23 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center py-2 px-4">
-        <div className="w-full h-full mx-auto px-4 text-center rounded-2xl py-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-[#FFFFFF]">
-            AI Support Chatbot — Template
-          </h1>
-          <p className="mb-8 max-w-screen-2xl mx-auto text-pretty text-[#FFFFFF]">
-            Open the chat in the bottom right corner to start a conversation
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <Link href="https://github.com/DeDevsClub/ai-support-chatbot">
-              <Button size="lg" className="w-fit bg-gray-950 text-gray-100 hover:bg-gray-900 border-gray-700 backdrop-blur-sm border-2">
-                <Icon icon="mdi:github" className="mr-1" />
-                Source Code
-              </Button>
-            </Link>
-            <Link href="https://github.com/DeDevsClub/ai-support-chatbot">
-              <Button size="lg" className="w-fit bg-gray-950 text-gray-100 hover:bg-gray-900 border-gray-700 backdrop-blur-sm border-2">
-                <Icon icon="mdi:chat" className="mr-1" />
-                Try Chat
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title="AI Support Chatbot — Template"
+        description="Open the chat in the bottom right corner to start a conversation"
+        buttons={[
+          {
+            label: "Source Code",
+            link: "https://github.com/DeDevsClub/ai-support-chatbot",
+            icon: "mdi:github"
+          },
+          {
+            label: "Try Chat",
+            link: "https://github.com/DeDevsClub/ai-support-chatbot",
+            icon: "mdi:chat"
+          }
+        ]}
+        className="py-2"
+      />
 
       {/* Features Section */}
       <FeaturesGrid />
