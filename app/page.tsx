@@ -1,13 +1,15 @@
-import ChatBotWrapper from "@/components/chatbot";
-import DemoPage from "@/components/demo";
+"use client";
 
-const page = () => {
+import ChatBotWrapper from "@/components/chatbot";
+import LandingPage from "@/components/landing";
+
+const Page = () => {
   return (
     <main>
-      <DemoPage />
+      <LandingPage />
       <ChatBotWrapper />
     </main>
   );
 };
 
-export default page;
+export default Page;

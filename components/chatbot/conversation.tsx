@@ -46,7 +46,7 @@ export const ConversationScrollButton = ({
     !isAtBottom && (
       <Button
         className={cn(
-          "absolute bottom-4 left-[50%] translate-x-[-50%] rounded-full shadow-none",
+          "absolute bottom-4 left-[50%] translate-x-[-50%] rounded-full shadow-none bg-gray-950 text-gray-100 hover:bg-gray-900 border-gray-700 backdrop-blur-sm border-2",
           className
         )}
         onClick={handleScrollToBottom}
@@ -55,7 +55,7 @@ export const ConversationScrollButton = ({
         variant="outline"
         {...props}
       >
-        <Icon icon="mdi:arrow-down" className="size-4" />
+        <Icon icon="mdi:arrow-down" className="size-4 text-gray-100" />
       </Button>
     )
   );

@@ -6,17 +6,17 @@ import {
   Conversation,
   ConversationContent,
   ConversationScrollButton,
-} from "./ai-elements/conversation";
-import { Message, MessageContent } from "./ai-elements/message";
+} from "./conversation";
+import { Message, MessageContent } from "./message";
 import ReactMarkdown from "react-markdown";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "motion/react";
 import { ExternalLink, MessageSquareIcon, RotateCw, X } from "lucide-react";
 import {
   PromptInput,
   PromptInputSubmit,
   PromptInputTextarea,
-} from "./ai-elements/prompt-input";
+} from "./prompt-input";
 import { chatbotConfig } from "@/lib/config";
 
 type ErrorMessage = {
@@ -33,7 +33,7 @@ const ChatBotWrapper = () => {
     <div className="">
       <Button
         size="sm"
-        className="fixed bottom-5 right-5 rounded-full p-4 h-fit"
+        className="fixed bottom-5 right-5 rounded-full p-4 h-fit bg-gray-950 text-gray-100 hover:bg-gray-900 border-gray-700 backdrop-blur-sm border-2"
         onClick={() => setIsOpen(!isOpen)}
       >
         <MessageSquareIcon className="size-5" />
@@ -169,25 +169,25 @@ export const ChatBot = ({ onClose }: { onClose: () => void }) => {
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
       className={`
             justify-between flex flex-col
-            fixed z-20 bg-white 
-            inset-0 w-screen h-screen rounded-none border-0
+            fixed z-20 bg-gray-950 text-gray-100 backdrop-blur-sm border-2 border-gray-700
+            inset-0 w-screen h-screen rounded-none
             md:max-w-100 md:w-full md:h-110 md:bottom-20 md:right-4 md:rounded-sm md:border md:inset-auto
           `}
     >
       {isRateLimited && (
-        <div className="text-red-700 rounded text-xs absolute bottom-16 w-full text-center z-10 bg-red-50 px-2 py-1">
+        <div className="text-red-100 rounded text-xs absolute bottom-16 w-full text-center z-10 bg-red-900/80 px-2 py-1">
           {getRateLimitMessage()}
         </div>
       )}
-      <div className="px-2 py-2 flex flex-row justify-between items-center">
+      <div className="px-2 py-2 flex flex-row justify-between items-center border-b border-gray-700">
         <div className="flex-col pl-2">
           <p className="font-bold">{chatbotConfig.ui.windowTitle}</p>
         </div>
         <div>
-          <Button onClick={clearMessages} size="icon" variant="ghost">
+          <Button onClick={clearMessages} size="icon" variant="ghost" className="text-gray-100 hover:bg-gray-900">
             <RotateCw />
           </Button>
-          <Button onClick={onClose} size="icon" variant="ghost">
+          <Button onClick={onClose} size="icon" variant="ghost" className="text-gray-100 hover:bg-gray-900">
             <X />
           </Button>
         </div>
@@ -229,9 +229,9 @@ export const ChatBot = ({ onClose }: { onClose: () => void }) => {
               <MessageContent>
                 <div className="flex gap-1 justify-center items-center py-2 px-1">
                   <span className="sr-only">Loading...</span>
-                  <div className="h-2 w-2 bg-neutral-300 rounded-full animate-bounce"></div>
-                  <div className="h-2 w-2 bg-neutral-300 rounded-full animate-bounce delay-150"></div>
-                  <div className="h-2 w-2 bg-neutral-300 rounded-full animate-bounce delay-300"></div>
+                  <div className="h-2 w-2 bg-gray-300 rounded-full animate-bounce"></div>
+                  <div className="h-2 w-2 bg-gray-300 rounded-full animate-bounce delay-150"></div>
+                  <div className="h-2 w-2 bg-gray-300 rounded-full animate-bounce delay-300"></div>
                 </div>
               </MessageContent>
             </Message>
@@ -241,7 +241,7 @@ export const ChatBot = ({ onClose }: { onClose: () => void }) => {
       </Conversation>
       <PromptInput
         onSubmit={handleSubmit}
-        className="flex items-center py-3 px-4 gap-2 border-t"
+        className="flex items-center py-2 px-2 gap-2 border-t border-gray-700 backdrop-blur-sm border-2 bg-gray-900"
       >
         <PromptInputTextarea
           onChange={(e) => setInput(e.target.value)}
@@ -306,7 +306,7 @@ const MarkdownWithButtons = ({
 
   return (
     <div>
-      <div className="prose text-sm">
+      <div className="prose prose-invert text-sm text-gray-100">
         <ReactMarkdown>{cleanMarkdown}</ReactMarkdown>
       </div>
       {(conversationChoices.length > 0 || linkButtons.length > 0) && (
@@ -318,7 +318,7 @@ const MarkdownWithButtons = ({
               size="sm"
               onClick={() => onConversationChoice(choice)}
               disabled={isRateLimited || status === "submitted"}
-              className={`text-xs rounded-full shadow-none ${isRateLimited ? "opacity-50 cursor-not-allowed" : ""
+              className={`text-xs rounded-full shadow-none bg-gray-900 text-gray-100 border-gray-600 hover:bg-gray-700 ${isRateLimited ? "opacity-50 cursor-not-allowed" : ""
                 }`}
             >
               {choice}
@@ -332,7 +332,7 @@ const MarkdownWithButtons = ({
               variant="default"
               size="sm"
               onClick={() => onLinkClick(button.url)}
-              className="text-xs rounded-full shadow-none"
+              className="text-xs rounded-full shadow-none bg-gray-100 text-gray-900 hover:bg-gray-200"
             >
               {button.label}
               <ExternalLink className="w-3 h-3 mr-1" />
