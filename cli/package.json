@@ -1,5 +1,5 @@
 {
-  "name": "support-chatbot-cli",
+  "name": "create-next-chatbot",
   "version": "1.0.0",
   "description": "CLI tool for integrating AI Support Chatbot into existing codebases",
   "main": "dist/index.js",
@@ -7,6 +7,7 @@
     "ai-chatbot": "dist/cli.js",
     "chatbot-cli": "dist/cli.js"
   },
+  "private": false,
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
