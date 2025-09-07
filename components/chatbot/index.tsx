@@ -37,7 +37,7 @@ type ErrorMessage = {
 const ChatBotWrapper = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   return (
     <div className="">
       <Button
@@ -47,11 +47,11 @@ const ChatBotWrapper = () => {
       >
         <MessageSquareIcon className="size-5" />
       </Button>
-      
+
       <AnimatePresence mode="wait">
         {isOpen && !isExpanded && (
-          <ChatBot 
-            key="chatbot" 
+          <ChatBot
+            key="chatbot"
             onClose={() => setIsOpen(false)}
             onExpand={() => setIsExpanded(true)}
           />
@@ -59,8 +59,8 @@ const ChatBotWrapper = () => {
       </AnimatePresence>
 
       <Sheet open={isExpanded} onOpenChange={setIsExpanded}>
-        <SheetContent 
-          side="right" 
+        <SheetContent
+          side="right"
           className="w-full sm:max-w-lg bg-gradient-to-br from-gray-950 to-black text-gray-100 border-gray-700"
         >
           <SheetHeader className="border-b border-gray-700 pb-4">
@@ -201,7 +201,7 @@ export const ChatBot = ({ onClose, onExpand }: { onClose: () => void; onExpand?:
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
       className={`
             justify-between flex flex-col
-            fixed z-20 bg-gray-950 text-gray-100 backdrop-blur-sm border-2 border-gray-700
+            fixed z-20 bg-gradient-to-br from-gray-950 to-black text-gray-100 backdrop-blur-sm border-2 border-gray-700
             inset-0 w-screen h-screen rounded-none
             md:max-w-100 md:w-full md:h-110 md:bottom-20 md:right-4 md:rounded-sm md:border md:inset-auto
           `}
@@ -423,20 +423,12 @@ const ChatBotContent = () => {
           {getRateLimitMessage()}
         </div>
       )}
-      
-      <div className="px-2 py-2 flex flex-row justify-between items-center border-b border-gray-700">
-        <div className="flex items-center gap-1">
-          <Button onClick={clearMessages} size="icon" variant="ghost" className="text-gray-100 hover:bg-gray-900">
-            <RotateCw />
-          </Button>
-        </div>
-      </div>
-      
-      <Conversation className="overflow-hidden flex-1">
+      {/* Conversation */}
+      <Conversation className="overflow-hidden flex-1 bg-gradient-to-br from-gray-950 to-black">
         <ConversationContent className="px-2">
           {messages.map((message) => (
             <div key={message.id}>
-              <Message from={message.role} key={message.id}>
+              <Message from={message.role} key={message.id} className="bg-gradient-to-br from-gray-950 to-black">
                 <MessageContent>
                   {message.parts.map((part, i) => {
                     switch (part.type) {
@@ -479,10 +471,10 @@ const ChatBotContent = () => {
         </ConversationContent>
         <ConversationScrollButton />
       </Conversation>
-      
+
       <PromptInput
         onSubmit={handleSubmit}
-        className="flex items-center py-2 px-2 gap-2 border-t border-gray-700 bg-gray-900"
+        className="flex items-center py-2 px-2 gap-2 border-t border-gray-700 bg-gray-900 h-16"
       >
         <PromptInputTextarea
           onChange={(e) => setInput(e.target.value)}

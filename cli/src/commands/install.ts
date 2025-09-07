@@ -3,7 +3,7 @@ import fs from "fs-extra";
 import chalk from "chalk";
 import inquirer from "inquirer";
 import ora from "ora";
-import { ErrorMessage, InstallOptions } from "../types";
+import { ErrorMessage } from "../types";
 import {
 	detectProjectInfo,
 	getAvailableFrameworks,
@@ -12,6 +12,13 @@ import {
 	installDependencies,
 	getRelativePath,
 } from "../utils";
+
+interface InstallOptions {
+	framework?: string;
+	interactive?: boolean;
+	timeout?: number;
+	dryRun?: boolean;
+}
 
 export async function installCommand(
 	options: InstallOptions = {},
