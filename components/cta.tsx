@@ -5,9 +5,6 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { Icon } from "@iconify/react";
 
-// UI component imports
-import { Button } from "@/components/ui/button";
-
 // Custom components
 import { Section, Container } from "@/components/ui/base";
 

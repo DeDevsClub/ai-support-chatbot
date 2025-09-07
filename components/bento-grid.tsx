@@ -39,7 +39,7 @@ export default function BentoGrid({ items }: BentoGridProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 max-w-screen-2xl mx-auto h-full w-full">
             {items.map((item) => (
                 <Link
-                    href="https://github.com/DeDevsClub/ai-support-chatbot"
+                    href="https://github.com/DeDevsClub/create-next-chatbot"
                     key={`${item.title}-${item.status || item.meta}`}
                     className={cn(item.colSpan || "col-span-1", item.colSpan === 2 ? "md:col-span-2" : "")}
                 >

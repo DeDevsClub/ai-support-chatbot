@@ -24,7 +24,7 @@ ${chalk.yellow('Examples:')}
   ${chalk.gray('$')} ai-chatbot templates list
 
 ${chalk.yellow('Documentation:')}
-  ${chalk.blue('https://github.com/DeDevsClub/ai-support-chatbot#cli')}
+  ${chalk.blue('https://github.com/DeDevsClub/create-next-chatbot#cli')}
 `);
 
 // Initialize new chatbot project

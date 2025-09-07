@@ -6,7 +6,7 @@ A powerful command-line interface for integrating AI Support Chatbot into existi
 
 ```bash
 # Install globally
-npm install -g @dedevsclub/ai-chatbot-cli
+npm install -g create-next-chatbot
 
 # Create a new chatbot project
 ai-chatbot init my-chatbot --framework nextjs
@@ -24,13 +24,13 @@ ai-chatbot configure --interactive
 ### Global Installation (Recommended)
 
 ```bash
-npm install -g @dedevsclub/ai-chatbot-cli
+npm install -g create-next-chatbot
 ```
 
 ### Local Installation
 
 ```bash
-npm install --save-dev @dedevsclub/ai-chatbot-cli
+npm install --save-dev create-next-chatbot
 npx ai-chatbot --help
 ```
 
@@ -466,8 +466,8 @@ npm run test:e2e
 
 ### Development Setup
 ```bash
-git clone https://github.com/DeDevsClub/ai-support-chatbot.git
-cd ai-support-chatbot/cli
+git clone https://github.com/DeDevsClub/create-next-chatbot.git
+cd create-next-chatbot/cli
 npm install
 npm run dev
 ```
@@ -478,9 +478,9 @@ MIT License - see [LICENSE](../LICENSE) for details.
 
 ## 🆘 Support
 
-- **Documentation**: [GitHub Wiki](https://github.com/DeDevsClub/ai-support-chatbot/wiki)
-- **Issues**: [GitHub Issues](https://github.com/DeDevsClub/ai-support-chatbot/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/DeDevsClub/ai-support-chatbot/discussions)
+- **Documentation**: [GitHub Wiki](https://github.com/DeDevsClub/create-next-chatbot/wiki)
+- **Issues**: [GitHub Issues](https://github.com/DeDevsClub/create-next-chatbot/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/DeDevsClub/create-next-chatbot/discussions)
 - **Discord**: [Join our community](https://discord.gg/dedevsclub)
 
 ## 🗺️ Roadmap

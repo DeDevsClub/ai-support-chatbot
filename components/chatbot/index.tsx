@@ -17,7 +17,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
+  // SheetTrigger,
 } from "@/components/ui/sheet";
 import {
   PromptInput,
@@ -389,23 +389,23 @@ const ChatBotContent = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
-  const clearMessages = () => {
-    // Clear all error and rate limit state when resetting chat
-    setIsRateLimited(false);
-    setRateLimitCountdown(null);
-    setMessages([
-      {
-        id: "welcome",
-        role: "assistant",
-        parts: [
-          {
-            type: "text",
-            text: chatbotConfig.welcomeMessage,
-          },
-        ],
-      },
-    ]);
-  };
+  // const clearMessages = () => {
+  //   // Clear all error and rate limit state when resetting chat
+  //   setIsRateLimited(false);
+  //   setRateLimitCountdown(null);
+  //   setMessages([
+  //     {
+  //       id: "welcome",
+  //       role: "assistant",
+  //       parts: [
+  //         {
+  //           type: "text",
+  //           text: chatbotConfig.welcomeMessage,
+  //         },
+  //       ],
+  //     },
+  //   ]);
+  // };
 
   // Format countdown message
   const getRateLimitMessage = () => {

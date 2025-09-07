@@ -229,7 +229,7 @@ const Box = ({
     };
 
     const getResponsiveClasses = (
-        prop: any,
+        prop: string | number | Record<string | number, string>,
         classMap: Record<string | number, string>
     ) => {
         if (typeof prop === "object") {
@@ -243,15 +243,46 @@ const Box = ({
         return classMap[prop as keyof typeof classMap] || "";
     };
 
+    const getResponsiveBooleanClasses = (
+        prop: boolean | Record<string, boolean>,
+        trueClass: string,
+        falseClass: string
+    ) => {
+        if (typeof prop === "object") {
+            return Object.entries(prop)
+                .map(([breakpoint, value]) => {
+                    const prefix = breakpoint === "sm" ? "" : `${breakpoint}:`;
+                    return `${prefix}${value ? trueClass : falseClass}`;
+                })
+                .join(" ");
+        }
+        return prop ? trueClass : falseClass;
+    };
+
+    const getResponsiveNumberClasses = (
+        prop: number | Record<string, number>,
+        classMap: Record<number, string>
+    ) => {
+        if (typeof prop === "object") {
+            return Object.entries(prop)
+                .map(([breakpoint, value]) => {
+                    const prefix = breakpoint === "sm" ? "" : `${breakpoint}:`;
+                    return `${prefix}${classMap[value as number] || ""}`;
+                })
+                .join(" ");
+        }
+        return classMap[prop] || "";
+    };
+
     const stackClasses = cn(
         cols || rows ? "grid" : "flex",
         getResponsiveClasses(direction, directionClasses),
         typeof wrap === "boolean"
             ? wrapClasses
-            : getResponsiveClasses(wrap, { true: "flex-wrap", false: "flex-nowrap" }),
-        getResponsiveClasses(gap, gapClasses),
-        cols && getResponsiveClasses(cols, colsClasses),
-        rows && getResponsiveClasses(rows, colsClasses), // Assuming rows use the same classes as cols
+            : getResponsiveBooleanClasses(wrap, "flex-wrap", "flex-nowrap"),
+        getResponsiveNumberClasses(gap, gapClasses),
+        cols && getResponsiveNumberClasses(cols, colsClasses),
+        rows && getResponsiveNumberClasses(rows, colsClasses), // Assuming rows use the same classes as cols
         className
     );
 

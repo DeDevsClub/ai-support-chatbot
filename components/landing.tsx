@@ -19,7 +19,7 @@ export default function LandingPage() {
           <nav className="flex items-center justify-between">
             <div className="text-lg font-semibold">DeDevs AI Support Chatbot</div>
 
-            <Link href="https://github.com/DeDevsClub/ai-support-chatbot">
+            <Link href="https://github.com/DeDevsClub/create-next-chatbot">
               <Button size="lg" className="w-fit bg-gray-950 text-gray-100 hover:bg-gray-900 border-gray-700 backdrop-blur-sm border-2">
                 <Icon icon="mdi:github" className="mr-1" />
                 Source Code
@@ -36,12 +36,12 @@ export default function LandingPage() {
         buttons={[
           {
             label: "Source Code",
-            link: "https://github.com/DeDevsClub/ai-support-chatbot",
+            link: "https://github.com/DeDevsClub/create-next-chatbot",
             icon: "mdi:github"
           },
           {
             label: "Try Chat",
-            link: "https://github.com/DeDevsClub/ai-support-chatbot",
+            link: "https://github.com/DeDevsClub/create-next-chatbot",
             icon: "mdi:chat"
           }
         ]}

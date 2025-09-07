@@ -27,7 +27,7 @@ export async function initCommand(
 				type: "input",
 				name: "inputName",
 				message: "What is your project name?",
-				default: "ai-support-chatbot",
+				default: "create-next-chatbot",
 				validate: (input: string) => {
 					const validation = validateProjectName(input);
 					return validation.valid || validation.errors.join(", ");
@@ -292,7 +292,7 @@ ARCJET_KEY=your_arcjet_key_here
 
 		console.log(chalk.blue("\n📚 Documentation:"));
 		console.log(
-			chalk.gray("  https://github.com/DeDevsClub/ai-support-chatbot#readme"),
+			chalk.gray("  https://github.com/DeDevsClub/create-next-chatbot#readme"),
 		);
 
 		console.log(chalk.blue("\n🔑 Required API Keys:"));

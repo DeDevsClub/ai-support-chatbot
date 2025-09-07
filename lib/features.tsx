@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import { Icon } from "@iconify/react";
-import Link from "next/link";
 
 interface Feature {
     title: string;

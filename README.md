@@ -22,7 +22,7 @@ The fastest way to get started is using our CLI tool:
 
 ```bash
 # Install the CLI globally
-npm install -g @dedevsclub/ai-chatbot-cli
+npm install -g create-next-chatbot
 
 # Create a new chatbot project
 ai-chatbot init my-chatbot --framework nextjs
@@ -37,8 +37,8 @@ ai-chatbot install --interactive
 ### 1. Clone and Install
 
 ```bash
-git clone https://github.com/DeDevsClub/ai-support-chatbot.git
-cd ai-support-chatbot
+git clone https://github.com/DeDevsClub/create-next-chatbot.git
+cd create-next-chatbot
 pnpm install
 ```
 
@@ -446,8 +446,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📧 Email: [support@dedevs.com](mailto:support@dedevs.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/DeDevsClub/ai-support-chatbot/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/DeDevsClub/ai-support-chatbot/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/DeDevsClub/create-next-chatbot/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/DeDevsClub/create-next-chatbot/discussions)
 - 🌐 Website: [DeDevs.com](https://dedevs.com)
 
 ---

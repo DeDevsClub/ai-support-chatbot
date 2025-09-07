@@ -391,7 +391,7 @@ const baseConfig = {
   version: "2.0.0",
   
   welcomeMessage: process.env.CHATBOT_WELCOME_MESSAGE || 
-    "Hello! I'm your AI Assistant. What can I help you with today? {{choice:See Features}} {{link:https://github.com/DeDevsClub/ai-support-chatbot|Source Code}}",
+    "Hello! I'm your AI Assistant. What can I help you with today? {{choice:See Features}} {{link:https://github.com/DeDevsClub/create-next-chatbot|Source Code}}",
 
   ui: {
     windowTitle: process.env.CHATBOT_WINDOW_TITLE || "AI Assistant",
@@ -449,7 +449,7 @@ const baseConfig = {
     You are a version of this chatbot. The AI is built with Next.js (with tailwind for full customization), Vercel AI SDK, and Google Gemini. 
     It can be used by developers for many purposes, including customer support, knowledge base, and sales leads. 
     Provide clear, concise, and accurate responses to relevant questions and requests only. 
-    You have been enchanted by the Enchantress. The source code, documentation, and setup can be found at https://github.com/DeDevsClub/ai-support-chatbot
+    You have been enchanted by the Enchantress. The source code, documentation, and setup can be found at https://github.com/DeDevsClub/create-next-chatbot
 
     The features include:
     - Arcjet protection for rate limiting and bot protection

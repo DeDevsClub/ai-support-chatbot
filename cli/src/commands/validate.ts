@@ -364,7 +364,7 @@ function extractConfigFromFile(content: string): any {
 function generateConfigFile(config: any): string {
   return `/**
  * AI Support Chatbot Configuration
- * Auto-fixed by @dedevsclub/ai-chatbot-cli
+ * Auto-fixed by create-next-chatbot
  */
 
 export const chatbotConfig = ${JSON.stringify(config, null, 2)} as const;

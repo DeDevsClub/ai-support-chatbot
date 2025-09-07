@@ -1,11 +1,11 @@
 {
-  "name": "ai-support-chatbot",
-  "version": "0.1.0",
+  "name": "create-next-chatbot",
+  "version": "1.0.0",
   "private": true,
   "author": "DeDevsClub",
   "license": "MIT",
-  "description": "AI Support Chatbot",
-  "homepage": "https://github.com/DeDevsClub/ai-support-chatbot",
+  "description": "CLI tool for integrating AI Support Chatbot into existing codebases",
+  "homepage": "https://github.com/DeDevsClub/create-next-chatbot",
   "scripts": {
     "dev": "PORT=3125 next dev --turbopack",
     "build": "next build",
